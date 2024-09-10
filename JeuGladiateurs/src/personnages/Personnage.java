@@ -36,9 +36,48 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    // TODO : Les getters
-    // TODO : Les setters
-    // </editor-fold>
+    
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPvs(int pvs) {
+        this.pvs = pvs;
+    }
+
+    public void setAttaqueMax(int attaqueMax) {
+        this.attaqueMax = attaqueMax;
+    }
+
+    public void setDefence(int defence) {
+        this.defence = defence;
+    }
+
+    public void setIni(int ini) {
+        this.ini = ini;
+    }
+    
+    
+    public String getNom() {
+        return nom;
+    }
+
+    public int getPvs() {
+        return pvs;
+    }
+
+    public int getAttaqueMax() {
+        return attaqueMax;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public int getIni() {
+        return ini;
+    }
+    
 
     // **************************************************************************
     // **************************************************************************
