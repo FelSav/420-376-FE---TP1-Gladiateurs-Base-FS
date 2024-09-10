@@ -16,11 +16,19 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
-        // TODO : Constructeur AVEC paramètres
+        this.nom = nom;
+        this.pvs = pvs;
+        this.attaqueMax = attaqueMax;
+        this.defence = defence;
+        this.ini = ini;
     }
 
     public Personnage() {
-        // TODO : Constructeur SANS paramètres qui initialise à ZÉRO ou à ""
+        nom = "";
+        pvs = 0;
+        attaqueMax = 0;
+        defence = 0;
+        ini = 0;
     }
     // </editor-fold>
 
