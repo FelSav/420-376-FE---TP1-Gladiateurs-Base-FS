@@ -14,8 +14,8 @@ public class JeuGladiateurs {
     // <editor-fold defaultstate="expanded" desc="Instanciation des objets">
     CompteurDeTour tour = new CompteurDeTour();
     AffichageEcran affichage = new AffichageEcran();
-    Personnage Bob = new Personnage("Bob le Bricoleur", 70, 15, 15, 15);
-    Personnage Igor = new Personnage("Igor l'empaleur", 100, 25, 5, 30);
+    Personnage Bob = new Personnage("Bob le Bricoleur", 15, 15, 70, 15);
+    Personnage Igor = new Personnage("Igor l'empaleur", 25, 5, 100, 30);
     // </editor-fold>
     
     // **************************************************************************
@@ -33,6 +33,12 @@ public class JeuGladiateurs {
     tour.augmenteTour();
     tour.afficheTour();
     
+    
+    Bob.frapperPersonnage(Igor);
+    Bob.frapperPersonnage(Igor);
+    System.out.println();
+    Igor.frapperPersonnage(Bob);
+    Igor.frapperPersonnage(Bob);
     
     // </editor-fold>
 

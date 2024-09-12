@@ -10,7 +10,7 @@ public class Personnage {
     private String nom;
     private int pvs;
     private int attaqueMax;
-    private int defence;
+    private int valeurDefense;
     private int ini;
     
     // **************************************************************************
@@ -21,7 +21,7 @@ public class Personnage {
         this.nom = nom;
         this.pvs = pvs;
         this.attaqueMax = attaqueMax;
-        this.defence = defence;
+        this.valeurDefense = defense;
         this.ini = ini;
     }
 
@@ -29,7 +29,7 @@ public class Personnage {
         nom = "";
         pvs = 0;
         attaqueMax = 0;
-        defence = 0;
+        valeurDefense = 0;
         ini = 0;
     }
     // </editor-fold>
@@ -52,7 +52,7 @@ public class Personnage {
     }
 
     public void setDefence(int defence) {
-        this.defence = defence;
+        this.valeurDefense = defence;
     }
 
     public void setIni(int ini) {
@@ -73,7 +73,7 @@ public class Personnage {
     }
 
     public int getDefence() {
-        return defence;
+        return valeurDefense;
     }
 
     public int getIni() {
@@ -89,7 +89,7 @@ public class Personnage {
         System.out.println("");
         System.out.println("\t" + nom);
         System.out.println("\tAttaque : " + attaqueMax);
-        System.out.println("\tDéfence : " + defence);
+        System.out.println("\tDéfence : " + valeurDefense);
         System.out.println("\tPOint de Vie : " + pvs);
         System.out.println("\tInitiative : " + ini);
         if (pvs <= 0) {
@@ -100,22 +100,37 @@ public class Personnage {
     }
 
     private int attaqueCalcul() {
-         Random rand = new Random();
+        Random rand = new Random();
          
-         int minValue = 0;
-         int maxValue = attaqueMax;
-         int attaque = rand.nextInt(maxValue - minValue) + minValue;
+        int minValue = 0;
+        int maxValue = attaqueMax;
+        int attaque = rand.nextInt(maxValue - minValue) + minValue;
         return attaque;
     }
 
     public void frapperPersonnage(Personnage personnageCible) {
-        // TODO : Récupérer la valeur d'attaque pour ce tour, calculer les dégats,
-        //modifier les points de vie du personnage cible, afficher les détails
-        // sur l'attaque, tel que montré dans l'énoncé.
+        int dommages;
+        do {
+            dommages = attaqueCalcul() - personnageCible.valeurDefense;
+        } while (dommages < 0);
+        
+        personnageCible.pvs -= dommages;
+        if (personnageCible.pvs < 0) {
+            personnageCible.pvs = 0;
+        }
+        
+        System.out.println();
+        System.out.println(this.nom + " Attaque avec un puissance de : " + attaqueCalcul());
+        System.out.println(personnageCible.nom + " À un défence de  : " + personnageCible.valeurDefense);
+        System.out.println("Les dommages sont donc de : " + dommages);
     }
 
     public void setNewInitiativeRandom() {
-        // TODO : Modifier de façon aléatoire la valeur INI du personnage.
+        Random rand = new Random();
+
+        int minValue = 0;
+        int maxValue = 100;
+        this.ini = rand.nextInt(maxValue - minValue) + minValue;
     }
     // </editor-fold>
 }
