@@ -1,5 +1,7 @@
 package personnages;
 
+import java.util.Random;
+
 public class Personnage {
 
     // **************************************************************************
@@ -84,7 +86,7 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void afficherInfosPersonnage() {
-        System.out.println("\n");
+        System.out.println("");
         System.out.println("\t" + nom);
         System.out.println("\tAttaque : " + attaqueMax);
         System.out.println("\tDéfence : " + defence);
@@ -98,9 +100,12 @@ public class Personnage {
     }
 
     private int attaqueCalcul() {
-        // TODO : Retourner la valeur de l'attaque du personnage.
-        // Cette valeur est trouvée aléatoirement et doit se situer entre ZÉRO et valeurMaxAttaque.
-        return 0;
+         Random rand = new Random();
+         
+         int minValue = 0;
+         int maxValue = attaqueMax;
+         int attaque = rand.nextInt(maxValue - minValue) + minValue;
+        return attaque;
     }
 
     public void frapperPersonnage(Personnage personnageCible) {

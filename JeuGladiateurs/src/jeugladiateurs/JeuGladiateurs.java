@@ -32,6 +32,8 @@ public class JeuGladiateurs {
     tour.augmenteTour();
     tour.augmenteTour();
     tour.afficheTour();
+    
+    
     // </editor-fold>
 
     // **************************************************************************
