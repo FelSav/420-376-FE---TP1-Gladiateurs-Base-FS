@@ -25,7 +25,13 @@ public class JeuGladiateurs {
     Bob.afficherInfosPersonnage();
     Igor.afficherInfosPersonnage();
     affichage.afficherDebutCombat();
-    // TODO : Afficher le message du début du combat
+    
+    tour.afficheTour();
+    tour.augmenteTour();
+    tour.afficheTour();
+    tour.augmenteTour();
+    tour.augmenteTour();
+    tour.afficheTour();
     // </editor-fold>
 
     // **************************************************************************
