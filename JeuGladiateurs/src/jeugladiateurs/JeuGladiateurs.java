@@ -26,19 +26,33 @@ public class JeuGladiateurs {
     Igor.afficherInfosPersonnage();
     affichage.afficherDebutCombat();
     
-    tour.afficheTour();
-    tour.augmenteTour();
-    tour.afficheTour();
-    tour.augmenteTour();
-    tour.augmenteTour();
-    tour.afficheTour();
-    
-    
-    Bob.frapperPersonnage(Igor);
-    Bob.frapperPersonnage(Igor);
-    System.out.println();
-    Igor.frapperPersonnage(Bob);
-    Igor.frapperPersonnage(Bob);
+        do {
+            tour.afficheTour();
+            for (int i = 0; i <= 100; i++) {
+                if (Bob.getIni() == i) {
+                    Bob.frapperPersonnage(Igor);
+                }
+                if (Igor.getIni() == i) {
+                    Igor.frapperPersonnage(Bob);
+                }
+            }
+            
+            affichage.afficherSeparateurInfosPerso();
+            Bob.afficherInfosPersonnage();
+            Igor.afficherInfosPersonnage();
+            
+            Bob.setNewInitiativeRandom();
+            Igor.setNewInitiativeRandom();
+            
+            tour.augmenteTour();
+            
+            affichage.afficherSeparateurDeTour();
+            
+            
+            
+        } while (Bob.getPvs() > 0 && Igor.getPvs() > 0);
+        
+        affichage.afficheVictoire(Bob, Igor);
     
     // </editor-fold>
 
