@@ -4,19 +4,12 @@ import java.util.Random;
 
 public class Personnage {
 
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
-    private String nom;
+    String nom;
     private int pvs;
     private int attaqueMax;
     private int valeurDefense;
-    private int ini;
+    int ini;
     
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
-    // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
     public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
         this.nom = nom;
         this.pvs = pvs;

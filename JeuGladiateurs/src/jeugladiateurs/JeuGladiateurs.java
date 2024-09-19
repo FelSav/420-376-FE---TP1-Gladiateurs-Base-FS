@@ -3,6 +3,8 @@ package jeugladiateurs;
 import personnages.Personnage;
 import combat.CompteurDeTour;
 import combat.AffichageEcran;
+import personnages.Mirmillon;
+import personnages.Retiaire;
 
 public class JeuGladiateurs {
 
@@ -14,8 +16,9 @@ public class JeuGladiateurs {
     // <editor-fold defaultstate="expanded" desc="Instanciation des objets">
     CompteurDeTour tour = new CompteurDeTour();
     AffichageEcran affichage = new AffichageEcran();
-    Personnage Bob = new Personnage("Bob le Bricoleur", 15, 15, 70, 15);
-    Personnage Igor = new Personnage("Igor l'empaleur", 25, 5, 100, 30);
+    
+    Mirmillon Bob = new Mirmillon("Bob le Bricoleur", 15, 15, 70, 15);
+    Retiaire Igor = new Retiaire("Igor l'empaleur", 25, 5, 100, 30);
     // </editor-fold>
     
     // **************************************************************************
@@ -53,16 +56,5 @@ public class JeuGladiateurs {
         } while (Bob.getPvs() > 0 && Igor.getPvs() > 0);
         
         affichage.afficheVictoire(Bob, Igor);
-    
-    // </editor-fold>
-
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
-    // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-    // TODO : La boucle contenant les étapes du combat
-    // TODO : Après la boucle, afficher le résultat du combat
-    // </editor-fold>
     }
-
 }
